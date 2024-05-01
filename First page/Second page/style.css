@@ -1,0 +1,75 @@
+body {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  
+    background-image:url(images1/OIG2.jpg);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: 100% 100%;
+  }
+
+  .paper {
+    background-image: url("images1/image.jpg");
+    background-size: 500px;
+    background-position: center center;
+    padding: 20px 100px;
+    
+    transform: rotateZ(-5deg);
+    box-shadow: 1px 15px 20px 0px rgba(0,0,0,0.5);
+    
+    position: absolute;
+  }
+  
+  .paper.image {
+    padding: 10px;
+  }
+  .paper.image p {
+    font-size: 30px;
+  }
+  
+  img {
+    max-height: 200px;
+    width: 100%;
+    user-select: none;
+  }
+  
+  p {
+    font-family: 'Zeyada';
+    font-size: 50px;
+    color: rgb(255,255,255);
+    opacity: 0.75;
+    user-select: none;
+    
+  }
+  
+  .boxhead .otherPage {
+    color: black;
+    text-decoration: none;
+  }
+  .boxhead a {
+      color: black;
+      text-decoration: none;
+  }
+
+  .popup {
+    display: none;
+    position: absolute;
+    background-position: center center;
+    padding: 20px;
+}
+
+.ui {
+  height: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  
+    background-size: 500px;
+    background-position: center center;
+    padding: 20px 20px;
+
+    
+    position: absolute;
+}
