@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Coding with Robby</title>
+  <link rel="stylesheet" href="./style.css">
+  <style>
+       * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: #160347a4;
+      position: relative;
+    }
+
+    .skate-container {
+      position: fixed;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    .logos-container {
+      overflow: hidden;
+      padding: 60px 0;
+      background: #16034744;
+      white-space: nowrap;
+      position: relative;
+    }
+
+    .logos-container:before,
+    .logos-container:after {
+      position: absolute;
+      top: 0;
+      width: 250px;
+      height: 100%;
+      content: "";
+      z-index: 2;
+    }
+
+    .logos-container:before {
+      left: 0;
+      background: linear-gradient(to left, rgba(255, 255, 255, 0), #16034744);
+    }
+
+    .logos-container:after {
+      right: 0;
+      background: linear-gradient(to right, rgba(77, 38, 38, 0), #16034744);
+    }
+
+    .logos-slide {
+      display: inline-block;
+      animation: slide 50s infinite linear;
+    }
+
+    @keyframes slide {
+      from {
+        transform: translateX(0);
+      }
+      to {
+        transform: translateX(-100%);
+      }
+    }
+
+    .logos-slide img {
+      height: 100px;
+      margin: 50px 50px;
+    }
+
+    .skate-text {
+      font-size: 48px;
+      font-weight: bold;
+      font-family: Arial, sans-serif;
+      opacity: 0;
+      animation: fadeIn 1s forwards;
+      margin-bottom: 20px;
+      cursor: pointer;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
+
+    .skate-text.visible {
+      animation: fadeOut 1s forwards;
+    }
+
+    @keyframes fadeOut {
+      from {
+        opacity: 1;
+      }
+      to {
+        opacity: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="logos-container">
+    <div class="logos-slide">
+      <img src="images2/photo_2023-09-01_17-54-33.jpg" />
+      <img src="images2/photo_2024-01-25_11-27-07.jpg" />
+      <img src="images2/photo_2024-01-25_11-27-06 (3).jpg" />
+      <img src="images2/photo_2024-01-25_11-27-04 (3).jpg" />
+      <img src="images2/photo_2024-01-25_11-27-00.jpg" />
+      <img src="images2/photo_2024-01-25_11-27-00 (2).jpg" />
+      <img src="images2/photo_2024-01-25_11-26-58.jpg" />
+      <img src="images2/photo_2024-01-25_11-26-55.jpg" />
+      <img src="images2\photo_2024-01-25_11-26-53.jpg" />
+      <img src="images2/photo_2024-01-25_11-26-48.jpg" />
+      <img src="images2/photo_2024-01-25_11-26-47.jpg" />
+      <img src="images2/photo_2024-01-25_10-41-32.jpg" />
+      <img src="images2/photo_2024-01-25_11-27-08.jpg" />
+      <img src="images2/photo_2024-01-26_12-54-37.jpg" />
+      <img src="images2/photo_2024-01-26_12-54-46.jpg" />
+      <img src="images2/photo_2024-01-25_11-27-10 (3).jpg" />
+    </div>
+
+    <div class="logos-slide">
+      <img src="images2/photo_2023-09-01_17-54-33.jpg" />
+      <img src="images2/photo_2024-01-25_11-27-07.jpg" />
+      <img src="images2/photo_2024-01-25_11-27-06 (3).jpg" />
+      <img src="images2/photo_2024-01-25_11-27-04 (3).jpg" />
+      <img src="images2/photo_2024-01-25_11-27-00.jpg" />
+      <img src="images2/photo_2024-01-25_11-27-00 (2).jpg" />
+      <img src="images2/photo_2024-01-25_11-26-58.jpg" />
+      <img src="images2/photo_2024-01-25_11-26-55.jpg" />
+      <img src="images2\photo_2024-01-25_11-26-53.jpg" />
+      <img src="images2/photo_2024-01-25_11-26-48.jpg" />
+      <img src="images2/photo_2024-01-25_11-26-47.jpg" />
+      <img src="images2/photo_2024-01-25_10-41-32.jpg" />
+      <img src="images2/photo_2024-01-25_11-27-08.jpg" />
+      <img src="images2/photo_2024-01-26_12-54-37.jpg" />
+      <img src="images2/photo_2024-01-26_12-54-46.jpg" />
+      <img src="images2/photo_2024-01-25_11-27-10 (3).jpg" />
+    </div>
+  </div>
+
+  <div class="skate-container">
+    <div class="skate-text" id="item" onclick="showPopup()">Happy Birthday princess...!!</div>
+    <div id="popup" style="display: none;"><a href="Third page/slideshow.html">❤️</a>
+  </div>
+
+  <audio id="song">
+    <source src="audios/Until I Found You (Em Beihold Version) (320).mp3">
+  </audio>
+
+  <script>
+function showPopup() {
+    const text = document.getElementById("item");
+    text.style.display = "none";  // Hide the text
+    const popup = document.getElementById("popup");
+    popup.style.display = "block"; // Show the popup
+}
+
+    // Audio playback on window click
+    window.addEventListener('click', () => {
+      const audio = document.getElementById('song');
+      audio.volume = 0.10;
+      audio.play();
+    });
+  </script>
+  
+</body>
+</html>
