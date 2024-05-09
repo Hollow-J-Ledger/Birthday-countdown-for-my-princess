@@ -10,7 +10,9 @@
 </head>
 <title>For my princess</title>
 <body>
-  
+  <audio id="song">
+    <source src="Justin Bieber-10,000hours(mmsub) (320).mp3">
+  </audio>
     </div>
         <div class="ui">
         <p ><id="item" ></id><a href="Third page/slideshow.html"><span class="otherPage">❤️</a></p>
@@ -53,6 +55,12 @@
       <p class="p2">Tip: you can move the papers</p>
     </div>
       <script  src="./script.js"></script>
-    
+<script>    
+window.addEventListener('click', () => {
+      const audio = document.getElementById('song');
+      audio.volume = 0.10;
+      audio.play();
+    });
+</script>
 </body>
 </html>
